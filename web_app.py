@@ -9,7 +9,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import time
 
 # loading the saved model
-loaded_model = pickle.load(open('models\LDA_saved_model.pkl', 'rb'))
+loaded_model = pickle.load(open('models\LDA_model_improved.pkl', 'rb'))
 
 def getSubjectivity(text):
     return TextBlob(text).sentiment.subjectivity
@@ -76,13 +76,6 @@ def main():
     neg=SIA['neg']
     neu=SIA['neu']
     pos=SIA['pos']
-
-    # x=[open,high,low,close,volume,subjectivity,polarity,compund,neg,pos,neu]
-    # pred=loaded_model.predict([x])[0]
-    # if pred == 0:
-    #     print('The prices will decrease')
-    # else:
-    #     print('The prices will increase')
 
     # creating a button for Prediction
     if st.button('Predict'):
